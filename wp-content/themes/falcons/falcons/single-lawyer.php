@@ -1,8 +1,8 @@
 <?php get_header();
-$directory_url_1=get_option('_iv_directory_url_1');					
-if($directory_url_1==""){$directory_url_1='law-firms';}	
+$directory_url_1=get_option('_iv_directory_url_1');
+if($directory_url_1==""){$directory_url_1='law-firms';}
 
-$directory_url_2=get_option('_iv_directory_url_2');					
+$directory_url_2=get_option('_iv_directory_url_2');
 if($directory_url_2==""){$directory_url_2='lawyers';}
 
 	$id = get_the_ID();
@@ -16,21 +16,21 @@ if($directory_url_2==""){$directory_url_2='lawyers';}
 		$cat_name = $currentCategory[0]->name;
 		$cat_link= get_term_link($currentCategory[0], $directory_url_2.'-category');
 	}
-	
+
 ?>
  <?php
 		$top_breadcrumb_image= falcons_IMAGE."banner-breadcrumb.jpg";
         if(isset($falcons_option_data['falcons-banner-breadcrumb']['url']) AND $falcons_option_data['falcons-banner-breadcrumb']['url']!=""):
 			$top_breadcrumb_image=esc_url($falcons_option_data['falcons-banner-breadcrumb']['url']);
          endif;
-         
+
          $falcons_breadcrumb_value='1';
          if(isset($falcons_option_data['falcons-breadcrumb']) AND $falcons_option_data['falcons-breadcrumb']!=""):
 			$falcons_breadcrumb_value=$falcons_option_data['falcons-breadcrumb'];
          endif;
-         
-         
-         if($falcons_breadcrumb_value=='1'){ 
+
+
+         if($falcons_breadcrumb_value=='1'){
 		?>
 		 <div class="breadcrumb-content">
 			<img   src="<?php echo $top_breadcrumb_image;?>" alt="<?php esc_html_e( 'banner', 'falcons' ); ?>">
@@ -49,15 +49,15 @@ if($directory_url_2==""){$directory_url_2='lawyers';}
 				if($field_set!=""){
 						$default_fields=get_option('iv_cpt-2_fields_review' );
 				}else{
-						$default_fields['Communication']=esc_html__('Communication','falcons'); 
+						$default_fields['Communication']=esc_html__('Communication','falcons');
 						$default_fields['Judgment']=esc_html__('Judgment','falcons');'';
 						$default_fields['Analytical']=esc_html__('Analytical','falcons');'';
 						$default_fields['Research-Skills']=esc_html__('Research Skills','falcons');
 						$default_fields['People-Skills']=esc_html__('People Skills','falcons');
 						$default_fields['Perseverance']=esc_html__('Perseverance','falcons');
-						$default_fields['Creativity']=esc_html__('Creativity','falcons');	
+						$default_fields['Creativity']=esc_html__('Creativity','falcons');
 				}
-				
+
 				if(sizeof($default_fields)>0){
 					foreach ( $default_fields as $field_key => $field_value ) {
 						$field_value_trim=trim($field_value);
@@ -68,7 +68,7 @@ if($directory_url_2==""){$directory_url_2='lawyers';}
 				if($total_rating_value>0 AND $total_count>0){
 					$avg_rating=$total_rating_value/$total_count;
 				}
-				
+
 				?>
 				  <div class="stars" style ="z-index: 99;position: relative;">
 				  <i class="fa fa-star<?php echo($avg_rating>=1? "":"-o"); ?>"></i>
@@ -79,7 +79,7 @@ if($directory_url_2==""){$directory_url_2='lawyers';}
 				  <span>(<?php echo ($total_count==""?0:$total_count); ?>)</span>
 				  </div>
 			</div>
-		</div>	
+		</div>
 		<?php
 			}
 		?>
@@ -182,20 +182,20 @@ $wp_directory= new wp_iv_directories();
 											if($field_set!=""){
 													$default_fields=get_option('iv_directories_fields_lawyer' );
 											}else{
-													$default_fields['Gender']='Gender';	
+													$default_fields['Gender']='Gender';
 													$default_fields['lawfirmAffiliations']='Law Office Affiliations';
 													$default_fields['ExperienceTranining']='Experience / Tranining';
 													$default_fields['Education']='Education';
 													$default_fields['Apprenticeships']='Apprenticeships';
 													$default_fields['Residency']='Residency';
-													$default_fields['PractiseArea']='Practise Area';	
-													$default_fields['Certifications']='Certifications';	
+													$default_fields['PractiseArea']='Practise Area';
+													$default_fields['Certifications']='Certifications';
 													$default_fields['Pre-Law']='Pre-Law';
-													$default_fields['Law-School']='Law School';		
-													$default_fields['law-degree']='Law Degree';																	
-													$default_fields['Bar-Exam']='Bar Exam';	
-													$default_fields['Practice-Course']='Practice Course';																
-													$default_fields['Languages']='Languages';		
+													$default_fields['Law-School']='Law School';
+													$default_fields['law-degree']='Law Degree';
+													$default_fields['Bar-Exam']='Bar Exam';
+													$default_fields['Practice-Course']='Practice Course';
+													$default_fields['Languages']='Languages';
 											}
 											if(sizeof($default_fields)>0){ 	?>
 												<ul class="qualification-list">
@@ -381,9 +381,9 @@ $wp_directory= new wp_iv_directories();
 												$booking_shortcode_main = str_replace("[", '', $booking_short_code);
 												$booking_shortcode_main = str_replace("]", '', $booking_shortcode_main);
 												if($booking_short_code!=''){
-													
+
 													echo do_shortcode($booking_short_code);
-													
+
 											}
 										}else{
 											echo get_option('_iv_visibility_login_message');
@@ -539,7 +539,7 @@ $wp_directory= new wp_iv_directories();
 									  $openin_days_final[ $tmp[0] ] = (isset($tmp[1])?$tmp[1]:'').'|'.(isset($tmp[2])?$tmp[2]:'');
 									}
 									$openin_days=$openin_days_final;
-								 } 
+								 }
 								if($openin_days!=''){
 									if(is_array($openin_days)){
 										if(sizeof($openin_days)>0){?>
@@ -562,63 +562,6 @@ $wp_directory= new wp_iv_directories();
 							}
 							 ?>
 						</div>
-							<div class="sidebar-content">
-									
-									<div class="cbp-l-project-details-title"><span><?php esc_html_e('Reviews','falcons'); ?></span></div>
-										
-									<ul class="cbp-l-project-details-list stars">
-									<?php
-									$i=1;$default_fields='';
-									$field_set=get_option('iv_cpt-2_fields_review' );
-									if($field_set!=""){
-											$default_fields=get_option('iv_cpt-2_fields_review' );
-									}else{
-											$default_fields['Communication']=esc_html__('Communication','falcons'); 
-											$default_fields['Judgment']=esc_html__('Judgment','falcons');'';
-											$default_fields['Analytical']=esc_html__('Analytical','falcons');'';
-											$default_fields['Research-Skills']=esc_html__('Research Skills','falcons');
-											$default_fields['People-Skills']=esc_html__('People Skills','falcons');
-											$default_fields['Perseverance']=esc_html__('Perseverance','falcons');
-											$default_fields['Creativity']=esc_html__('Creativity','falcons');	
-									}
-									if(sizeof($default_fields)>0){
-										foreach ( $default_fields as $field_key => $field_value ) {
-											$field_value_trim=trim($field_value);
-											$old_rating= get_post_meta($id,$field_key.'_rating',true);
-											$key_total_count= get_post_meta($id,$field_key.'_count',true);	
-											if($key_total_count<1){$key_total_count=1;}
-											$old_rating=$old_rating/$key_total_count;
-											?>
-											 <li><strong><?php echo $field_value_trim; ?></strong>
-												  <a title="<?php esc_html_e('Submit Rating','falcons'); ?>" href="javascript:;"  onclick="save_rating('<?php echo $id; ?>','<?php echo $field_key; ?>','1')" >
-												 <i  id="<?php echo $field_key ?>_1" class="uourating fa fa-star<?php echo($old_rating>=1 ? '':'-o'); ?>"></i></a>
-
-												 <a title="<?php esc_html_e('Submit Rating','falcons'); ?>" href="javascript:;"  onclick="save_rating('<?php echo $id; ?>','<?php echo $field_key; ?>','2')" >
-												 <i id="<?php echo $field_key ?>_2"  class="uourating fa fa-star<?php echo($old_rating>=2 ? '':'-o'); ?>"></i></a>
-
-												 <a title="<?php esc_html_e('Submit Rating','falcons'); ?>" href="javascript:;"  onclick="save_rating('<?php echo $id; ?>','<?php echo $field_key; ?>','3')" >
-												 <i id="<?php echo $field_key ?>_3"  class="uourating fa fa-star<?php echo($old_rating>=3 ? '':'-o'); ?>"></i></a>
-
-												 <a title="<?php esc_html_e('Submit Rating','falcons'); ?>" href="javascript:;" onclick="save_rating('<?php echo $id; ?>','<?php echo $field_key; ?>','4')" >
-												 <i id="<?php echo $field_key ?>_4"  class="uourating fa fa-star<?php echo($old_rating>=4 ? '':'-o'); ?>"></i></a>
-
-												 <a title="<?php esc_html_e('Submit Rating','falcons'); ?>" href="javascript:;" onclick="save_rating('<?php echo $id; ?>','<?php echo $field_key; ?>','5')" >
-												 <i id="<?php echo $field_key ?>_5" class="uourating fa fa-star<?php echo($old_rating>=5 ? '':'-o'); ?>"></i></a>
-											 
-											 
-											 </li>
-											<?php
-
-											}
-									}		
-										?>
-									</ul>
-										
-								
-										
-								</div>
-								
-
 
 						<div class="sidebar-content">
 							<div class="cbp-l-project-details-title"><span><?php esc_html_e('Contact Me','falcons'); ?></span>
@@ -699,7 +642,7 @@ endwhile;
 ?>
 
 <!--
-            
+
 
 
 
