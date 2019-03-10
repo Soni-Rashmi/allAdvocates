@@ -42,9 +42,9 @@ require_once(  get_template_directory(). '/framework/admin/falcons-image.php' );
 require_once(  get_template_directory(). '/framework/falcons-profile/plugin.php' );
 require_once(  get_template_directory(). '/framework/vc_map.php' );
 
-if (defined('wp_iv_directories_URLPATH') && wp_iv_directories_URLPATH!='') { 
-	require_once(  get_template_directory(). '/framework/ext/falcons-cpt1.php' ); 
-	require_once(  get_template_directory(). '/framework/ext/falcons-cpt2.php' ); 
+if (defined('wp_iv_directories_URLPATH') && wp_iv_directories_URLPATH!='') {
+	require_once(  get_template_directory(). '/framework/ext/falcons-cpt1.php' );
+	require_once(  get_template_directory(). '/framework/ext/falcons-cpt2.php' );
 }
 /*-------------------------------------------------------------------------
   END INITIALIZE FILE LINK
@@ -71,7 +71,3 @@ function falcons_special_nav_class ($classes, $item) {
     }
     return $classes;
 }
-
-
-
-
